@@ -1,0 +1,111 @@
+==29456== Memcheck, a memory error detector
+==29456== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==29456== Using Valgrind-3.15.0-608cb11914-20190413 and LibVEX; rerun with -h for copyright info
+==29456== Command: ./hw12 inputs/test1
+==29456== Parent PID: 29455
+==29456== 
+--29456-- 
+--29456-- Valgrind options:
+--29456--    --tool=memcheck
+--29456--    --leak-check=yes
+--29456--    --verbose
+--29456--    --leak-check=full
+--29456--    --log-file=log1
+--29456-- Contents of /proc/version:
+--29456--   Linux version 3.10.0-1160.42.2.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC) ) #1 SMP Tue Sep 7 14:49:57 UTC 2021
+--29456-- 
+--29456-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-rdtscp-sse3-ssse3
+--29456-- Page sizes: currently 4096, max supported 4096
+--29456-- Valgrind library directory: /usr/libexec/valgrind
+--29456-- Reading syms from /home/shay/a/yang2010/hw12-LiChungYang/hw12
+--29456-- Reading syms from /usr/lib64/ld-2.17.so
+--29456--   Considering /usr/lib/debug/.build-id/62/c449974331341bb08dcce3859560a22af1e172.debug ..
+--29456--   .. build-id is valid
+--29456-- Reading syms from /usr/libexec/valgrind/memcheck-amd64-linux
+--29456--    object doesn't have a symbol table
+--29456--    object doesn't have a dynamic symbol table
+--29456-- Scheduler: using generic scheduler lock implementation.
+--29456-- Reading suppressions file: /usr/libexec/valgrind/default.supp
+==29456== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-29456-by-yang2010-on-ecegrid-thin1.ecn.purdue.edu
+==29456== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-29456-by-yang2010-on-ecegrid-thin1.ecn.purdue.edu
+==29456== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-29456-by-yang2010-on-ecegrid-thin1.ecn.purdue.edu
+==29456== 
+==29456== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==29456== don't want to do, unless you know exactly what you're doing,
+==29456== or are doing some strange experiment):
+==29456==   /usr/libexec/valgrind/../../bin/vgdb --pid=29456 ...command...
+==29456== 
+==29456== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==29456==   /path/to/gdb ./hw12
+==29456== and then give GDB the following command
+==29456==   target remote | /usr/libexec/valgrind/../../bin/vgdb --pid=29456
+==29456== --pid is optional if only one valgrind process is running
+==29456== 
+--29456-- REDIR: 0x4019e40 (ld-linux-x86-64.so.2:strlen) redirected to 0x580c7ed5 (???)
+--29456-- REDIR: 0x4019c10 (ld-linux-x86-64.so.2:index) redirected to 0x580c7eef (???)
+--29456-- Reading syms from /usr/libexec/valgrind/vgpreload_core-amd64-linux.so
+--29456-- Reading syms from /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so
+==29456== WARNING: new redirection conflicts with existing -- ignoring it
+--29456--     old: 0x04019e40 (strlen              ) R-> (0000.0) 0x580c7ed5 ???
+--29456--     new: 0x04019e40 (strlen              ) R-> (2007.0) 0x04c2d1b0 strlen
+--29456-- REDIR: 0x4019dc0 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c2e300 (strcmp)
+--29456-- REDIR: 0x401aa80 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c31f90 (mempcpy)
+--29456-- Reading syms from /usr/lib64/libc-2.17.so
+--29456--   Considering /usr/lib/debug/.build-id/a3/17b42b15368adcae21c11107691a03ec91059d.debug ..
+--29456--   .. build-id is valid
+--29456-- REDIR: 0x4ec71c0 (libc.so.6:strcasecmp) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--29456-- REDIR: 0x4ec3f40 (libc.so.6:strnlen) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--29456-- REDIR: 0x4ec9490 (libc.so.6:strncasecmp) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--29456-- REDIR: 0x4ec69a0 (libc.so.6:memset) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--29456-- REDIR: 0x4ec6950 (libc.so.6:memcpy@GLIBC_2.2.5) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--29456-- REDIR: 0x4ec5930 (libc.so.6:__GI_strrchr) redirected to 0x4c2cb70 (__GI_strrchr)
+--29456-- REDIR: 0x4ebc740 (libc.so.6:malloc) redirected to 0x4c29eec (malloc)
+--29456-- REDIR: 0x4edc9b0 (libc.so.6:__GI_strstr) redirected to 0x4c32220 (__strstr_sse2)
+--29456-- REDIR: 0x4ec3e10 (libc.so.6:strlen) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--29456-- REDIR: 0x4fa67a0 (libc.so.6:__strlen_sse2_pminub) redirected to 0x4c2d0f0 (strlen)
+--29456-- REDIR: 0x4ebcc40 (libc.so.6:realloc) redirected to 0x4c2c1c5 (realloc)
+--29456-- REDIR: 0x4ec3e60 (libc.so.6:__GI_strlen) redirected to 0x4c2d110 (__GI_strlen)
+==29456== Invalid read of size 1
+==29456==    at 0x4E7347C: ____strtof_l_internal (strtod_l.c:770)
+==29456==    by 0x400DA1: main (hw12.c:132)
+==29456==  Address 0x5205361 is 0 bytes after a block of size 1 alloc'd
+==29456==    at 0x4C2C291: realloc (vg_replace_malloc.c:836)
+==29456==    by 0x400CE5: main (hw12.c:119)
+==29456== 
+==29456== Invalid read of size 1
+==29456==    at 0x4E73240: ____strtof_l_internal (strtod_l.c:825)
+==29456==    by 0x400DA1: main (hw12.c:132)
+==29456==  Address 0x5205361 is 0 bytes after a block of size 1 alloc'd
+==29456==    at 0x4C2C291: realloc (vg_replace_malloc.c:836)
+==29456==    by 0x400CE5: main (hw12.c:119)
+==29456== 
+--29456-- REDIR: 0x4ebcb60 (libc.so.6:free) redirected to 0x4c2afe6 (free)
+--29456-- REDIR: 0x4ecd450 (libc.so.6:strchrnul) redirected to 0x4c31ab0 (strchrnul)
+--29456-- REDIR: 0x4ec6b70 (libc.so.6:__GI_mempcpy) redirected to 0x4c31cc0 (__GI_mempcpy)
+==29456== 
+==29456== HEAP SUMMARY:
+==29456==     in use at exit: 0 bytes in 0 blocks
+==29456==   total heap usage: 11 allocs, 11 frees, 661 bytes allocated
+==29456== 
+==29456== All heap blocks were freed -- no leaks are possible
+==29456== 
+==29456== ERROR SUMMARY: 6 errors from 2 contexts (suppressed: 0 from 0)
+==29456== 
+==29456== 3 errors in context 1 of 2:
+==29456== Invalid read of size 1
+==29456==    at 0x4E73240: ____strtof_l_internal (strtod_l.c:825)
+==29456==    by 0x400DA1: main (hw12.c:132)
+==29456==  Address 0x5205361 is 0 bytes after a block of size 1 alloc'd
+==29456==    at 0x4C2C291: realloc (vg_replace_malloc.c:836)
+==29456==    by 0x400CE5: main (hw12.c:119)
+==29456== 
+==29456== 
+==29456== 3 errors in context 2 of 2:
+==29456== Invalid read of size 1
+==29456==    at 0x4E7347C: ____strtof_l_internal (strtod_l.c:770)
+==29456==    by 0x400DA1: main (hw12.c:132)
+==29456==  Address 0x5205361 is 0 bytes after a block of size 1 alloc'd
+==29456==    at 0x4C2C291: realloc (vg_replace_malloc.c:836)
+==29456==    by 0x400CE5: main (hw12.c:119)
+==29456== 
+==29456== ERROR SUMMARY: 6 errors from 2 contexts (suppressed: 0 from 0)
